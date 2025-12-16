@@ -25,3 +25,8 @@ dist-ssr
 
 # Portfolio assets
 My-Portfolio/assets/images/
+
+# ... existing lines ...
+.env
+.env.local
+Test.jsx

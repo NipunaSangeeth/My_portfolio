@@ -6,9 +6,9 @@ import { z } from 'zod';
 import emailjs from '@emailjs/browser';
 
 // EmailJS Configuration
-const EMAILJS_SERVICE_ID = 'service_04yx49e';
-const EMAILJS_TEMPLATE_ID = 'template_4bnsjyh';
-const EMAILJS_PUBLIC_KEY = 'EgXbem7VDJYoZVakT';
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 const contactInfo = [
     {
@@ -74,6 +74,7 @@ const ContactSection = () => {
             return
         }
         setIsSubmitting(true);
+
         try {
             await emailjs.send(
                 EMAILJS_SERVICE_ID,
@@ -102,7 +103,6 @@ const ContactSection = () => {
             setIsSubmitting(false);
         }
     };
-
 
 
     return (
